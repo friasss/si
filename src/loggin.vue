@@ -1,4 +1,5 @@
 <template>
+    <div id="login">
   <div class="auth-container">
     <div class="card">
       <h2>{{ modo === "login" ? "Iniciar Sesión" : "Registrarse" }}</h2>
@@ -47,6 +48,7 @@
         {{ mensaje }}
       </p>
     </div>
+  </div>
   </div>
 </template>
 
@@ -101,6 +103,7 @@ const handleSubmit = async () => {
     }
   }
 };
+
 </script>
 
 <style scoped>
