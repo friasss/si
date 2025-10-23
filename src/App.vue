@@ -1,56 +1,3 @@
-<template>
-    <div id="login">
-  <div class="auth-container">
-    <div class="card">
-      <h2>{{ modo === "login" ? "Iniciar Sesión" : "Registrarse" }}</h2>
-
-      <form @submit.prevent="handleSubmit">
-        <!-- Nombre solo aparece en modo registro -->
-        <div v-if="modo === 'registro'">
-          <label>Nombre</label>
-          <input
-            v-model="nombre"
-            type="text"
-            placeholder="Tu nombre completo"
-            required
-          />
-        </div>
-
-        <label>Correo</label>
-        <input
-          v-model="correo"
-          type="email"
-          placeholder="ejemplo@correo.com"
-          required
-        />
-
-        <label>Contraseña</label>
-        <input
-          v-model="contrasena"
-          type="password"
-          placeholder="********"
-          required
-        />
-
-        <button type="submit" class="btn-primary">
-          {{ modo === "login" ? "Iniciar Sesión" : "Registrarse" }}
-        </button>
-      </form>
-
-      <p class="toggle">
-        {{ modo === "login" ? "¿No tienes cuenta?" : "¿Ya tienes cuenta?" }}
-        <a href="#" @click.prevent="toggleModo">
-          {{ modo === "login" ? "Regístrate aquí" : "Inicia sesión" }}
-        </a>
-      </p>
-
-      <p v-if="mensaje" :class="['msg', mensaje.includes('✅') ? 'success' : 'error']">
-        {{ mensaje }}
-      </p>
-    </div>
-  </div>
-  </div>
-</template>
 
 <script setup>
 import { ref } from "vue";
@@ -105,6 +52,62 @@ const handleSubmit = async () => {
 };
 
 </script>
+
+
+<template>
+    <div id="login">
+  <div class="auth-container">
+    <div class="card">
+      <h2>{{ modo === "login" ? "Iniciar Sesión" : "Registrarse" }}</h2>
+
+      <form @submit.prevent="handleSubmit">
+        <!-- Nombre solo aparece en modo registro -->
+        <div v-if="modo === 'registro'">
+          <label>Nombre</label>
+          <input
+            v-model="nombre"
+            type="text"
+            placeholder="Tu nombre completo"
+            required
+          />
+        </div>
+
+        <label>Correo</label>
+        <input
+          v-model="correo"
+          type="email"
+          placeholder="ejemplo@correo.com"
+          required
+        />
+
+        <label>Contraseña</label>
+        <input
+          v-model="contrasena"
+          type="password"
+          placeholder="********"
+          required
+        />
+
+        <button type="submit" class="btn-primary">
+          {{ modo === "login" ? "Iniciar Sesión" : "Registrarse" }}
+        </button>
+      </form>
+
+      <p class="toggle">
+        {{ modo === "login" ? "¿No tienes cuenta?" : "¿Ya tienes cuenta?" }}
+        <a href="#" @click.prevent="toggleModo">
+          {{ modo === "login" ? "Regístrate aquí" : "Inicia sesión" }}
+        </a>
+      </p>
+
+      <p v-if="mensaje" :class="['msg', mensaje.includes('✅') ? 'success' : 'error']">
+        {{ mensaje }}
+      </p>
+    </div>
+  </div>
+  </div>
+</template>
+
 
 <style scoped>
 .auth-container {

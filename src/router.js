@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
-import Loggin from "./components/Loggin.vue";
-import Estudiantes from "./components/Estudiantes.vue";
+import Loggin from "./loggin.vue";
+import Estudiantes from "./Estudiantes.vue";
 
 const routes = [
   { path: "/login", component: Loggin },
